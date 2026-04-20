@@ -1,26 +1,52 @@
 package se.magictechnology.pia14android20apr
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
+import kotlinx.serialization.json.Json
+import okhttp3.OkHttpClient
+import okhttp3.Request
 
 class PIAViewModel : ViewModel() {
+
+    private val client = OkHttpClient()
 
     private var _menuitems = MutableStateFlow(listOf<MenuItem>())
     val menuitems: StateFlow<List<MenuItem>> = _menuitems.asStateFlow()
 
-
     fun loadmenu() {
-        var tempmenuitems = mutableListOf<MenuItem>()
+        val apiurl = "https://firebasestorage.googleapis.com/v0/b/pia14-bdf2a.firebasestorage.app/o/menudata.json?alt=media&token=f6387a91-8968-4f81-be35-2949844e6bf5"
 
-        var m1 = MenuItem(title = "Pizza", description = "Pizza with cheese", price = "99kr", menutype = "main", image = "")
-        var m2 = MenuItem(title = "Hamburger", description = "Hamburger with cheese", price = "129kr", menutype = "main", image = "")
+        CoroutineScope(Dispatchers.IO).launch {
+            val request = Request.Builder()
+                .url(apiurl)
+                .build()
 
-        tempmenuitems.add(m1)
-        tempmenuitems.add(m2)
+            client.newCall(request).execute().use { response ->
 
-        _menuitems.value = tempmenuitems
+                //response.code
+
+                if (!response.isSuccessful) {
+                    //"Unexpected code $response"
+                    Log.d("PIA14DEBUG", "API FAIL")
+                } else {
+                    Log.d("PIA14DEBUG", "API OK")
+                }
+
+                val theresponsetext = response.body!!.string()
+                Log.d("PIA14DEBUG", theresponsetext)
+
+                val apidata = Json {ignoreUnknownKeys = true}.decodeFromString<MenulistAPI>(theresponsetext)
+
+                _menuitems.value = apidata.menu
+            }
+
+        }
     }
 
 }

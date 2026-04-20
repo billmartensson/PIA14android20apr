@@ -1,0 +1,19 @@
+{
+  "menu": [
+    {
+      "title": "Hotdog",
+      "description": "Premium hotdog with mustard",
+      "price": "149kr",
+      "menutype": "",
+      "image": ""
+    },
+    {
+      "title": "Pizza",
+      "description": "Round food",
+      "price": "79kr",
+      "menutype": "",
+      "image": ""
+    }
+  ]
+}
+
