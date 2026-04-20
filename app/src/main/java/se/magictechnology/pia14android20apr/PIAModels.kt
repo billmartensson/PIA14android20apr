@@ -14,3 +14,16 @@ data class MenuItem(
     val image : String
 )
 
+
+@Serializable
+data class NewsAPI(val news: List<NewsItem>)
+
+
+@Serializable
+data class NewsItem(
+    val title : String,
+    val description : String,
+    val date : String,
+    val image : String?
+)
+

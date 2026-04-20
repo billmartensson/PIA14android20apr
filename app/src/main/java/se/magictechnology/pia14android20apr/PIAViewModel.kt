@@ -19,6 +19,9 @@ class PIAViewModel : ViewModel() {
     private var _menuitems = MutableStateFlow(listOf<MenuItem>())
     val menuitems: StateFlow<List<MenuItem>> = _menuitems.asStateFlow()
 
+    private var _newsitems = MutableStateFlow(listOf<NewsItem>())
+    val newsitems: StateFlow<List<NewsItem>> = _newsitems.asStateFlow()
+
     fun loadmenu() {
         val apiurl = "https://firebasestorage.googleapis.com/v0/b/pia14-bdf2a.firebasestorage.app/o/menudata.json?alt=media&token=f6387a91-8968-4f81-be35-2949844e6bf5"
 
@@ -44,6 +47,36 @@ class PIAViewModel : ViewModel() {
                 val apidata = Json {ignoreUnknownKeys = true}.decodeFromString<MenulistAPI>(theresponsetext)
 
                 _menuitems.value = apidata.menu
+            }
+
+        }
+    }
+
+    fun loadnews() {
+        val apiurl = "https://firebasestorage.googleapis.com/v0/b/pia14-bdf2a.firebasestorage.app/o/newsdata.json?alt=media&token=af28a491-c44e-4d4c-9cd8-706379a4ed74"
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val request = Request.Builder()
+                .url(apiurl)
+                .build()
+
+            client.newCall(request).execute().use { response ->
+
+                //response.code
+
+                if (!response.isSuccessful) {
+                    //"Unexpected code $response"
+                    Log.d("PIA14DEBUG", "API FAIL")
+                } else {
+                    Log.d("PIA14DEBUG", "API OK")
+                }
+
+                val theresponsetext = response.body!!.string()
+                Log.d("PIA14DEBUG", theresponsetext)
+
+                val apidata = Json {ignoreUnknownKeys = true}.decodeFromString<NewsAPI>(theresponsetext)
+
+                _newsitems.value = apidata.news
             }
 
         }

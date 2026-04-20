@@ -1,0 +1,16 @@
+{
+  "news": [
+    {
+      "title": "Hotdog is here",
+      "description": "We now sell hotdog",
+      "date": "",
+      "image": ""
+    },
+    {
+      "title": "New location",
+      "description": "We opened new restaurant",
+      "date": "79kr",
+      "image": ""
+    }
+  ]
+}
