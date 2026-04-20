@@ -26,13 +26,14 @@ fun PIANav(
         // MENU
         navigation(route = PIARoute.MENUMAIN.name, startDestination = PIARoute.MENULIST.name) {
             composable(PIARoute.MENULIST.name) {
-                MenuList(goDetail = {
-                    navController.navigate(PIARoute.MENUDETAIL.name)
+                MenuList(piavm = piavm, goDetail = { menuitem ->
+                    navController.navigate(menuitem)
                 })
             }
 
-            composable(PIARoute.MENUDETAIL.name) {
-                MenuDetail()
+            composable<MenuItem> { backStackEntry ->
+                val menuitem : MenuItem = backStackEntry.toRoute()
+                MenuDetail(piavm = piavm, currentmenuitem = menuitem)
             }
 
         }
