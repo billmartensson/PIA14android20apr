@@ -1,0 +1,20 @@
+{
+  "welcometext": "Welcome to app",
+  "menutypes": [
+    {
+      "menukey": "fastfood",
+      "title": "Fastfood",
+      "description": "Very healthy fastfood"
+    },
+    {
+      "menukey": "dessert",
+      "title": "Dessert",
+      "description": "The sweet food"
+    },
+    {
+      "menukey": "drink",
+      "title": "Drinks",
+      "description": "Things to drink"
+    }
+  ]
+}

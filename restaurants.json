@@ -1,0 +1,23 @@
+{
+  "restaurants": [
+    {
+      "address": "Place 1",
+      "description": "First place",
+      "lat": 1.35,
+      "lng": 103.87
+    },
+    {
+      "address": "Place 2",
+      "description": "Second place",
+      "lat": 1.351,
+      "lng": 103.86
+    },
+    {
+      "address": "Place 3",
+      "description": "Third place",
+      "lat": 1.34,
+      "lng": 103.86
+    }
+  ]
+}
+

@@ -41,14 +41,14 @@ fun PIANav(
         // NEWS
         navigation(route = PIARoute.NEWSMAIN.name, startDestination = PIARoute.NEWS.name) {
             composable(PIARoute.NEWS.name) {
-                News()
+                News(piavm = piavm)
             }
         }
 
         // RESTAURANTS
         navigation(route = PIARoute.RESTAURANTSMAIN.name, startDestination = PIARoute.RESTURANTS.name) {
             composable(PIARoute.RESTURANTS.name) {
-                Restaurants()
+                Restaurants(piavm = piavm)
             }
         }
 

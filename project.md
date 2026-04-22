@@ -30,10 +30,20 @@
 * lat
 * lng
 
-
-# Future:
 ## Config
 * menu types
+
+
+
+# TODO:
+* Show loading
+* Show error
+* Style UI
+* Favorite menu items
+* Map show direction
+* Image in news
+* Map click to read more
+
 
 
 

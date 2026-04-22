@@ -4,16 +4,31 @@
       "title": "Hotdog",
       "description": "Premium hotdog with mustard",
       "price": "149kr",
-      "menutype": "",
-      "image": ""
+      "menutype": "fastfood",
+      "image": "https://firebasestorage.googleapis.com/v0/b/pia14-bdf2a.firebasestorage.app/o/frogmenu.jpg?alt=media&token=1b1c1044-c8c0-4ca8-9474-b4c3ea4f528f"
     },
     {
       "title": "Pizza",
       "description": "Round food",
       "price": "79kr",
-      "menutype": "",
-      "image": ""
+      "menutype": "fastfood",
+      "image": "https://firebasestorage.googleapis.com/v0/b/pia14-bdf2a.firebasestorage.app/o/frogmenu.jpg?alt=media&token=1b1c1044-c8c0-4ca8-9474-b4c3ea4f528f"
+    },
+    {
+      "title": "Icecream",
+      "description": "Its cold",
+      "price": "5kr",
+      "menutype": "dessert",
+      "image": "https://firebasestorage.googleapis.com/v0/b/pia14-bdf2a.firebasestorage.app/o/frogmenu.jpg?alt=media&token=1b1c1044-c8c0-4ca8-9474-b4c3ea4f528f"
+    },
+    {
+      "title": "Water",
+      "description": "To drink",
+      "price": "39kr",
+      "menutype": "drink",
+      "image": "https://firebasestorage.googleapis.com/v0/b/pia14-bdf2a.firebasestorage.app/o/frogmenu.jpg?alt=media&token=1b1c1044-c8c0-4ca8-9474-b4c3ea4f528f"
     }
+
   ]
 }
 

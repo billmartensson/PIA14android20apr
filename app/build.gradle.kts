@@ -70,4 +70,9 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.10.0")
 
     implementation("com.squareup.okhttp3:okhttp:5.3.0")
+
+    implementation("io.coil-kt.coil3:coil-compose:3.4.0")
+    implementation("io.coil-kt.coil3:coil-network-okhttp:3.4.0")
+
+    implementation("com.google.maps.android:maps-compose:8.2.2")
 }
